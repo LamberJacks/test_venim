@@ -79,7 +79,7 @@
         navBorder = document.createElement("div");
         navBorder.className = "nav-border";
         navBorder.style.cssText = `
-        position: fixed;
+        position: absolute;
         top: var(--header-height, 100px);
         left: 0;
         right: 0;
