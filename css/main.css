@@ -1030,4 +1030,7 @@ line-height: 100%;
     margin-bottom: 40px;
     font-size: 32px;
 }
+.advantages__item img{
+  transform: scale(.9);
+}
 }
