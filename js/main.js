@@ -101,11 +101,11 @@
         const isOpen = nav.classList.contains("open");
 
         if (!isOpen) {
-          nav.style.height = "50vh";
+          nav.style.height = "60vh";
           nav.classList.add("open");
           body.classList.add("no-scroll");
 
-          navBorder.style.top = `calc(var(--header-height, 100px) + 50vh - 3px)`;
+          navBorder.style.top = `calc(var(--header-height, 100px) + 60vh - 3px)`;
         } else {
           nav.style.height = "0";
 
@@ -175,7 +175,7 @@
 
       const resizeHandler = () => {
         if (nav.classList.contains("open")) {
-          navBorder.style.top = `calc(var(--header-height, 100px) + 70vh - 3px)`;
+          navBorder.style.top = `calc(var(--header-height, 100px) + 60vh - 3px)`;
         } else {
           navBorder.style.top = "var(--header-height, 100px)";
         }
@@ -223,9 +223,13 @@
   // ---------------------header_swiper-----------------------------
   const swiper = new Swiper(".header__swiper", {
     // autoplay: {
-    //   delay: 10000,
+    //   delay: 2000,
     // },
     loop: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
 
     // If we need pagination
     pagination: {
