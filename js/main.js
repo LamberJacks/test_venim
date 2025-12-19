@@ -231,6 +231,8 @@
       crossFade: true
     },
 
+
+
     // If we need pagination
     pagination: {
       el: ".header__pagination",
@@ -242,4 +244,66 @@
       prevEl: ".header__prev",
     },
   });
+
+    // ---------------------team_swiper-----------------------------
+
+// Левый слайдер (миниатюры)
+const thumbsSwiper = new Swiper('.team__swiper-left', {
+  spaceBetween: -10,
+  slidesPerView: 'auto',
+  freeMode: true,
+  watchSlidesProgress: true,
+  slideToClickedSlide: true,
+  
+  scrollbar: {
+    el: '.team__scrollbar',
+    draggable: true,
+  },
+  breakpoints: {
+  800: {
+    spaceBetween: 32
+  }
+}
+
+});
+
+// Функция показа члена команды
+function showTeamMember(index) {
+  // Все правые слайды
+  const rightSlides = document.querySelectorAll('.team__slide-right');
+  const leftSlides = document.querySelectorAll('.team__slide-left');
+  
+  // Прячем все
+  rightSlides.forEach(slide => {
+    slide.classList.remove('active');
+    // slide.style.opacity = '0';
+    slide.style.visibility = 'hidden';
+    
+  });
+  leftSlides.forEach(slide => {
+    slide.classList.remove('active-left');
+  });
+  
+  // Показываем нужный
+  if (rightSlides[index] && leftSlides[index]) {
+    rightSlides[index].classList.add('active');
+    leftSlides[index].classList.add('active-left');
+
+    // rightSlides[index].style.opacity = '1';
+    rightSlides[index].style.visibility = 'visible';
+  }
+}
+
+// Клик по миниатюре
+document.querySelectorAll('.team__slide-left').forEach((slide, index) => {
+  slide.addEventListener('click', () => {
+    thumbsSwiper.slideTo(index);
+    showTeamMember(index);
+  });
+});
+
+
+showTeamMember(0);
+
+
 })();
