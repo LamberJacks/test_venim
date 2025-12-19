@@ -306,4 +306,49 @@ document.querySelectorAll('.team__slide-left').forEach((slide, index) => {
 showTeamMember(0);
 
 
+  // Таб
+  const tabControls = document.querySelector(".tab-controls")
+
+  tabControls.addEventListener("click", toggleTab)
+
+  function toggleTab(e) {
+    const target = e.target
+    const tabControl = target.closest(".tab-controls__link")
+
+    if (!tabControl) return
+    e.preventDefault()
+    if (tabControl.classList.contains("tab-controls--active")) return
+
+
+    const tabContentID = tabControl.getAttribute("href")
+    const tabContent = document.querySelector(tabContentID)
+    const tabContentShow = document.querySelector(".tab-content--show")
+    const tabControlsActive = document.querySelector(".tab-controls--active")
+
+    tabContentShow.classList.remove("tab-content--show")
+    tabControlsActive.classList.remove("tab-controls--active")
+
+    tabContent.classList.add("tab-content--show")
+    tabControl.classList.add('tab-controls--active')
+  }
+  //------------------------------------------------------
+
+  
+  // Слайдеры для телефонов 
+  const TabOneSlider = new Swiper('.services__swiper--one', {
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    freeMode: true, 
+    watchSlidesProgress: true,
+  
+  });
+
+  const TabTwoSlider = new Swiper('.services__swiper--two', {
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    freeMode: true, 
+    watchSlidesProgress: true,
+  
+  });
+
 })();
