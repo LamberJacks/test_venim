@@ -222,9 +222,9 @@
 
   // ---------------------header_swiper-----------------------------
   const swiper = new Swiper(".header__swiper", {
-    // autoplay: {
-    //   delay: 2000,
-    // },
+    autoplay: {
+      delay: 10000,
+    },
     loop: true,
     effect: 'fade',
     fadeEffect: {

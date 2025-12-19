@@ -105,12 +105,23 @@ body {
 
 
 .about__video-player{
+  position: relative;
   max-width: 580px;
 }
 .about__video-player img{
   width: 100%;
   border: 4px solid black;
 }
+.about__video-player::before{
+  content: url("./../img/icon/about/play.svg");
+  position: absolute;
+  top: 39%;
+  left: 44%;
+
+}
+
+
+
 /* =================== advantages ======================= */
 .advantages__title{
   font-size: 48px;
@@ -736,9 +747,6 @@ margin-bottom: 130px;
 /* =============================================== */
 
 
-/* =================== team - Адаптив ======================= */
-
-/* 1400px */
 
 @media (max-width: 1400px) {
   /* ------global------- */
@@ -1045,6 +1053,11 @@ line-height: 100%;
     .about__descr, .about__video-top p{
     font-size: 18px;
   }
+  .about__video-player::before {
+    top: 35%;
+    left: 40%;
+    transform: scale(.7);
+}
 
   /* ------- advantages -------- */
 
@@ -1200,6 +1213,12 @@ display: none;
   }
   .about__video-top img{
     width: 60px;
+  }
+
+  .about__video-player::before{
+    top: 39%;
+    left: 44%;
+    transform: scale(0.9);
   }
 
   /* ------- advantages -------- */
@@ -1409,7 +1428,7 @@ display: none;
 
 .slide__edge-list{
   flex-direction: row;
-
+  align-items: center;
   margin-bottom: 20px;
 }
 .slide__edge-item{
@@ -1530,11 +1549,15 @@ display: none;
   }
   
   .main__about{
-    margin-top: 1450px;
+    margin-top: 1150px;
   }
 
   .main__advantages {
-    margin-top: 130px;
+    margin-top: 100px;
+}
+
+.main__team{
+  margin-top: 100px;
 }
 
   /* ------header------- */
@@ -1623,20 +1646,28 @@ display: none;
 .slide__stars--mobile img {
   width: 62px;
 }
-  /* ---- about ----- */
-  .about__descr {
-    font-size: 15px;
-}
-.about__inner{
-  gap: 30px;
+
+.slide__title {
+  font-size: 24px;
 }
 
-.about__video-top p{
-  font-size: 17px;
+.slide__item span , .slide__button{
+  font-size: 12px;
 }
-.about__title{
-  font-size: 32px;
-  margin-bottom: 40px;
+
+.slide__item{
+  gap: 5px;
+}
+
+.slide__button--sum {
+  font-size: 14px;
+  padding-left: 5px;
+}
+.slide__item img {
+  transform: scale(0.7);
+}
+.slide__descr, .slide__title{
+  margin-bottom: 12px;
 }
 
 .slide__content--one .slide__button {
@@ -1654,6 +1685,42 @@ display: none;
 .header__pagination{
   transform: scale(0.9);
 }
+
+.slide__list{
+  gap: 5px;
+}
+
+.slider__links a {
+  font-size: 9px;
+}
+
+
+.header__slide {
+  padding-bottom: 450px;
+  min-height: 1154px;
+}
+  /* ---- about ----- */
+  .about__descr {
+    font-size: 15px;
+}
+.about__inner{
+  gap: 30px;
+}
+
+.about__video-top p{
+  font-size: 17px;
+}
+.about__title{
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.about__video-player::before{
+  transform: scale(0.5);
+  top: 30%;
+  left: 40%;
+}
+
   /* ------- advantages -------- */
   .advantages__grid{
     grid-template-columns: 1fr;
