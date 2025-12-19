@@ -101,11 +101,11 @@
         const isOpen = nav.classList.contains("open");
 
         if (!isOpen) {
-          nav.style.height = "50vh";
+          nav.style.height = "60vh";
           nav.classList.add("open");
           body.classList.add("no-scroll");
 
-          navBorder.style.top = `calc(var(--header-height, 100px) + 50vh - 3px)`;
+          navBorder.style.top = `calc(var(--header-height, 100px) + 60vh - 3px)`;
         } else {
           nav.style.height = "0";
 
@@ -175,7 +175,7 @@
 
       const resizeHandler = () => {
         if (nav.classList.contains("open")) {
-          navBorder.style.top = `calc(var(--header-height, 100px) + 70vh - 3px)`;
+          navBorder.style.top = `calc(var(--header-height, 100px) + 60vh - 3px)`;
         } else {
           navBorder.style.top = "var(--header-height, 100px)";
         }
@@ -222,10 +222,16 @@
 
   // ---------------------header_swiper-----------------------------
   const swiper = new Swiper(".header__swiper", {
-    // autoplay: {
-    //   delay: 10000,
-    // },
+    autoplay: {
+      delay: 10000,
+    },
     loop: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+
+
 
     // If we need pagination
     pagination: {
@@ -238,4 +244,66 @@
       prevEl: ".header__prev",
     },
   });
+
+    // ---------------------team_swiper-----------------------------
+
+// Левый слайдер (миниатюры)
+const thumbsSwiper = new Swiper('.team__swiper-left', {
+  spaceBetween: -10,
+  slidesPerView: 'auto',
+  freeMode: true,
+  watchSlidesProgress: true,
+  slideToClickedSlide: true,
+  
+  scrollbar: {
+    el: '.team__scrollbar',
+    draggable: true,
+  },
+  breakpoints: {
+  800: {
+    spaceBetween: 32
+  }
+}
+
+});
+
+// Функция показа члена команды
+function showTeamMember(index) {
+  // Все правые слайды
+  const rightSlides = document.querySelectorAll('.team__slide-right');
+  const leftSlides = document.querySelectorAll('.team__slide-left');
+  
+  // Прячем все
+  rightSlides.forEach(slide => {
+    slide.classList.remove('active');
+    // slide.style.opacity = '0';
+    slide.style.visibility = 'hidden';
+    
+  });
+  leftSlides.forEach(slide => {
+    slide.classList.remove('active-left');
+  });
+  
+  // Показываем нужный
+  if (rightSlides[index] && leftSlides[index]) {
+    rightSlides[index].classList.add('active');
+    leftSlides[index].classList.add('active-left');
+
+    // rightSlides[index].style.opacity = '1';
+    rightSlides[index].style.visibility = 'visible';
+  }
+}
+
+// Клик по миниатюре
+document.querySelectorAll('.team__slide-left').forEach((slide, index) => {
+  slide.addEventListener('click', () => {
+    thumbsSwiper.slideTo(index);
+    showTeamMember(index);
+  });
+});
+
+
+showTeamMember(0);
+
+
 })();
