@@ -1439,7 +1439,7 @@ display: none;
     position: absolute;
     inset: 0;
     bottom: -20px;
-    background: rgba(255, 255, 255, 0.399);
+    background: rgba(220, 220, 220, 0.707);
     backdrop-filter: blur(17.5px);
     z-index: 11;
   }
@@ -1494,7 +1494,7 @@ display: none;
     opacity: 0;
     visibility: hidden;
     transition: height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
-    background: rgba(255, 255, 255, 0.399);
+    background: rgba(220, 220, 220, 0.707);
     -webkit-backdrop-filter: blur(17.5px); /* Для Safari */
     backdrop-filter: blur(17.5px);
   }
