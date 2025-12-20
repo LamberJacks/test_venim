@@ -50,35 +50,64 @@
   }
 
   // Burger menu
-  function initBurgerMenu() {
-    const width = document.documentElement.clientWidth;
-    if (width <= 800) {
-      const headerInfo = document.querySelector(".header__info");
-      if (headerInfo) {
-        document.documentElement.style.setProperty(
-          "--header-height",
-          headerInfo.offsetHeight + 50 + "px"
-        );
+  (function () {
+    const MOBILE_WIDTH = 800;
+    let isMobile = false;
+    let scrollY = 0;
+  
+    const body = document.body;
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav");
+    const headerInfo = document.querySelector(".header__info");
+  
+    let navBorder = null;
+  
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+  
+    function setHeaderHeight() {
+      if (!headerInfo) return;
+      document.documentElement.style.setProperty(
+        "--header-height",
+        headerInfo.offsetHeight + 50 + "px"
+      );
+    }
+  
+    function lockBody() {
+      if (!isIOS()) {
+        body.classList.add("no-scroll");
+        return;
       }
-
-      window.addEventListener("resize", () => {
-        if (headerInfo) {
-          document.documentElement.style.setProperty(
-            "--header-height",
-            headerInfo.offsetHeight + 50 + "px"
-          );
-        }
-      });
-
-      const burger = document.querySelector(".burger");
-      const nav = document.querySelector(".nav");
-      const body = document.body;
-
-      let navBorder = document.querySelector(".nav-border");
-      if (!navBorder) {
-        navBorder = document.createElement("div");
-        navBorder.className = "nav-border";
-        navBorder.style.cssText = `
+  
+      scrollY = window.scrollY;
+      body.style.position = "fixed";
+      body.style.top = `-${scrollY}px`;
+      body.style.left = "0";
+      body.style.right = "0";
+      body.style.width = "100%";
+    }
+  
+    function unlockBody() {
+      if (!isIOS()) {
+        body.classList.remove("no-scroll");
+        return;
+      }
+  
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      window.scrollTo(0, scrollY);
+    }
+  
+    function createNavBorder() {
+      if (navBorder) return;
+  
+      navBorder = document.createElement("div");
+      navBorder.className = "nav-border";
+      navBorder.style.cssText = `
         position: absolute;
         top: var(--header-height, 100px);
         left: 0;
@@ -89,136 +118,102 @@
         pointer-events: none;
         transition: top 0.4s ease;
       `;
-        document.body.appendChild(navBorder);
-      }
-
-      const oldBurgerClick = burger._burgerClickHandler;
-      if (oldBurgerClick) {
-        burger.removeEventListener("click", oldBurgerClick);
-      }
-
-      const burgerClickHandler = () => {
-        const isOpen = nav.classList.contains("open");
-
-        if (!isOpen) {
-          nav.style.height = "60vh";
-          nav.classList.add("open");
-          body.classList.add("no-scroll");
-
-          navBorder.style.top = `calc(var(--header-height, 100px) + 60vh - 3px)`;
-        } else {
-          nav.style.height = "0";
-
-          navBorder.style.top = "var(--header-height, 100px)";
-
-          setTimeout(() => {
-            nav.classList.remove("open");
-            body.classList.remove("no-scroll");
-          }, 400);
-        }
-      };
-
-      burger._burgerClickHandler = burgerClickHandler;
-      burger.addEventListener("click", burgerClickHandler);
-
-      document
-        .querySelectorAll(".nav__link, .header__sublink, .header__subitem")
-        .forEach((element) => {
-          // Удаляем старый обработчик
-          const oldClickHandler = element._menuCloseHandler;
-          if (oldClickHandler) {
-            element.removeEventListener("click", oldClickHandler);
-          }
-
-          const clickHandler = () => {
-            nav.style.height = "0";
-            navBorder.style.top = "var(--header-height, 100px)";
-
-            setTimeout(() => {
-              nav.classList.remove("open");
-              body.classList.remove("no-scroll");
-            }, 400);
-          };
-
-          element._menuCloseHandler = clickHandler;
-          element.addEventListener("click", clickHandler);
-        });
-
-      const oldDocumentClick = document._outsideClickHandler;
-      if (oldDocumentClick) {
-        document.removeEventListener("click", oldDocumentClick);
-      }
-
-      const outsideClickHandler = (e) => {
-        if (
-          !nav.contains(e.target) &&
-          !burger.contains(e.target) &&
-          nav.classList.contains("open")
-        ) {
-          nav.style.height = "0";
-          navBorder.style.top = "var(--header-height, 100px)";
-
-          setTimeout(() => {
-            nav.classList.remove("open");
-            body.classList.remove("no-scroll");
-          }, 400);
-        }
-      };
-
-      document._outsideClickHandler = outsideClickHandler;
-      document.addEventListener("click", outsideClickHandler);
-
-      const oldResizeHandler = window._navBorderResizeHandler;
-      if (oldResizeHandler) {
-        window.removeEventListener("resize", oldResizeHandler);
-      }
-
-      const resizeHandler = () => {
-        if (nav.classList.contains("open")) {
-          navBorder.style.top = `calc(var(--header-height, 100px) + 60vh - 3px)`;
-        } else {
-          navBorder.style.top = "var(--header-height, 100px)";
-        }
-      };
-
-      window._navBorderResizeHandler = resizeHandler;
-      window.addEventListener("resize", resizeHandler);
-    } else {
-      const nav = document.querySelector(".nav");
-      const burger = document.querySelector(".burger");
-
-      if (nav) {
-        nav.style.height = "";
+      document.body.appendChild(navBorder);
+    }
+  
+    function openMenu() {
+      nav.style.height = "60vh";
+      nav.classList.add("open");
+      lockBody();
+  
+      navBorder.style.top = `calc(var(--header-height, 100px) + 60vh - 3px)`;
+    }
+  
+    function closeMenu() {
+      nav.style.height = "0";
+      navBorder.style.top = "var(--header-height, 100px)";
+  
+      setTimeout(() => {
         nav.classList.remove("open");
-      }
-
-      if (burger && burger._burgerClickHandler) {
-        burger.removeEventListener("click", burger._burgerClickHandler);
-        delete burger._burgerClickHandler;
-      }
-
-      if (document._outsideClickHandler) {
-        document.removeEventListener("click", document._outsideClickHandler);
-        delete document._outsideClickHandler;
-      }
-
-      if (window._navBorderResizeHandler) {
-        window.removeEventListener("resize", window._navBorderResizeHandler);
-        delete window._navBorderResizeHandler;
-      }
-
-      const navBorder = document.querySelector(".nav-border");
-      if (navBorder) {
-        navBorder.remove();
+        unlockBody();
+      }, 400);
+    }
+  
+    function burgerHandler(e) {
+      if (e.type === "touchstart") e.preventDefault();
+      nav.classList.contains("open") ? closeMenu() : openMenu();
+    }
+  
+    function outsideHandler(e) {
+      if (
+        nav.classList.contains("open") &&
+        !nav.contains(e.target) &&
+        !burger.contains(e.target)
+      ) {
+        closeMenu();
       }
     }
-  }
-
-  // Запускаем при загрузке
-  document.addEventListener("DOMContentLoaded", initBurgerMenu);
-
-  // Запускаем при изменении размера окна
-  window.addEventListener("resize", initBurgerMenu);
+  
+    function resizeNavBorder() {
+      if (!navBorder) return;
+      navBorder.style.top = nav.classList.contains("open")
+        ? `calc(var(--header-height, 100px) + 60vh - 3px)`
+        : "var(--header-height, 100px)";
+    }
+  
+    function enableMobileMenu() {
+      if (isMobile) return;
+      isMobile = true;
+  
+      setHeaderHeight();
+      createNavBorder();
+  
+      burger.addEventListener("click", burgerHandler);
+      burger.addEventListener("touchstart", burgerHandler, { passive: false });
+  
+      document.addEventListener("click", outsideHandler);
+      window.addEventListener("resize", resizeNavBorder);
+      window.addEventListener("orientationchange", resizeNavBorder);
+  
+      document
+        .querySelectorAll(".nav__link, .header__sublink, .header__subitem")
+        .forEach((el) => {
+          el.addEventListener("click", closeMenu);
+          el.addEventListener("touchstart", closeMenu, { passive: true });
+        });
+    }
+  
+    function disableMobileMenu() {
+      if (!isMobile) return;
+      isMobile = false;
+  
+      nav.style.height = "";
+      nav.classList.remove("open");
+      unlockBody();
+  
+      burger.removeEventListener("click", burgerHandler);
+      burger.removeEventListener("touchstart", burgerHandler);
+  
+      document.removeEventListener("click", outsideHandler);
+      window.removeEventListener("resize", resizeNavBorder);
+      window.removeEventListener("orientationchange", resizeNavBorder);
+  
+      if (navBorder) {
+        navBorder.remove();
+        navBorder = null;
+      }
+    }
+  
+    function checkMode() {
+      document.documentElement.clientWidth <= MOBILE_WIDTH
+        ? enableMobileMenu()
+        : disableMobileMenu();
+    }
+  
+    document.addEventListener("DOMContentLoaded", checkMode);
+    window.addEventListener("resize", checkMode);
+  })();
+  
 
   // ---------------------header_swiper-----------------------------
   const swiper = new Swiper(".header__swiper", {
@@ -305,5 +300,50 @@ document.querySelectorAll('.team__slide-left').forEach((slide, index) => {
 
 showTeamMember(0);
 
+
+  // Таб
+  const tabControls = document.querySelector(".tab-controls")
+
+  tabControls.addEventListener("click", toggleTab)
+
+  function toggleTab(e) {
+    const target = e.target
+    const tabControl = target.closest(".tab-controls__link")
+
+    if (!tabControl) return
+    e.preventDefault()
+    if (tabControl.classList.contains("tab-controls--active")) return
+
+
+    const tabContentID = tabControl.getAttribute("href")
+    const tabContent = document.querySelector(tabContentID)
+    const tabContentShow = document.querySelector(".tab-content--show")
+    const tabControlsActive = document.querySelector(".tab-controls--active")
+
+    tabContentShow.classList.remove("tab-content--show")
+    tabControlsActive.classList.remove("tab-controls--active")
+
+    tabContent.classList.add("tab-content--show")
+    tabControl.classList.add('tab-controls--active')
+  }
+  //------------------------------------------------------
+
+  
+  // Слайдеры для телефонов 
+  const TabOneSlider = new Swiper('.services__swiper--one', {
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    freeMode: true, 
+    watchSlidesProgress: true,
+  
+  });
+
+  const TabTwoSlider = new Swiper('.services__swiper--two', {
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    freeMode: true, 
+    watchSlidesProgress: true,
+  
+  });
 
 })();
