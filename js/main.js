@@ -346,7 +346,7 @@ showTeamMember(0);
   
   });
   
-  // running line
+  // marquee
 
   const track = document.querySelector('.marquee__track');
   const line = document.querySelector('.marquee__line');
