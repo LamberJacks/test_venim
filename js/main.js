@@ -345,5 +345,48 @@ showTeamMember(0);
     watchSlidesProgress: true,
   
   });
+  
+  // running line
+
+  const track = document.querySelector('.marquee__track');
+  const line = document.querySelector('.marquee__line');
+  const speed = 0.5; // px per frame
+  
+  let position = 0;
+  const lineWidth = line.offsetWidth;
+  
+  function animate() {
+    position -= speed;
+  
+    if (Math.abs(position) >= lineWidth) {
+      position = 0;
+    }
+  
+    track.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+
+
+// reviews slider
+const reviewsSwiper = new Swiper('.reviews__swiper', {
+  spaceBetween: 10,
+  slidesPerView: 1,
+  
+  pagination: {
+    el: '.reviews__pagination',
+  },
+  breakpoints: {
+  1000: {
+    slidesPerView: 2,
+  },
+  800: {
+    slidesPerView: 1.5,
+  }
+}
+
+});
+  
 
 })();
