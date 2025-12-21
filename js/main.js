@@ -51,7 +51,7 @@
 
   // Burger menu
   (function () {
-    const MOBILE_WIDTH = 800;
+    const MOBILE_WIDTH = 1000;
     let isMobile = false;
     let scrollY = 0;
   
@@ -385,8 +385,74 @@ const reviewsSwiper = new Swiper('.reviews__swiper', {
     slidesPerView: 1.5,
   }
 }
-
 });
+// practice slider
+const practiceSwiper = new Swiper('.practice__swiper', {
+  spaceBetween: 28,
+  slidesPerView: 1,
+  
+  pagination: {
+    el: '.practice__pagination',
+  },
+  breakpoints: {
+  1200: {
+    slidesPerView: 3,
+  },
+  1000: {
+    slidesPerView: 2.5,
+  },
+  800: {
+    slidesPerView: 2,
+  },
+  600:{
+    slidesPerView: 1.5,
+  }
+}
+});
+
+
+// pop ap
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('casePopup');
+  if (!popup) return;
+
+  const openButtons = document.querySelectorAll(
+    '.practice__card-buttons .practice__card-button:first-child'
+  );
+
+  const closeButton = popup.querySelector('.popup__close');
+  const overlay = popup.querySelector('.popup__overlay');
+
+  const openPopup = () => {
+    popup.classList.remove('popup--hidden');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closePopup = () => {
+    popup.classList.add('popup--hidden');
+    document.body.style.overflow = '';
+  };
+
+  openButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      openPopup();
+    });
+  });
+
+  closeButton?.addEventListener('click', closePopup);
+  overlay?.addEventListener('click', closePopup);
+
+  document.addEventListener('keydown', event => {
+    if (
+      event.key === 'Escape' &&
+      !popup.classList.contains('popup--hidden')
+    ) {
+      closePopup();
+    }
+  });
+});
+
   
 
 })();
