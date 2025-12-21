@@ -2675,8 +2675,8 @@ padding: 25px 50px;
 }
 
 .services__swiper--one, .services__swiper--two{
-  display: block;
-  overflow: hidden;
+  display: flex;
+  /* overflow: hidden; */
 }
 
 /* ------ values --------- */

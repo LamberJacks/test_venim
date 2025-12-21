@@ -343,6 +343,7 @@ showTeamMember(0);
     slidesPerView: 'auto',
     freeMode: true, 
     watchSlidesProgress: true,
+    loop: false
   
   });
   
