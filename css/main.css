@@ -886,223 +886,9 @@ margin-bottom: 55px;
   margin-top: 90px;
   padding: 5px;
 }
-.reviews__more {
-}
-
-/* ===== 1400 ===== */
-@media (max-width: 1400px) {
-  .main__practice {
-    margin-top: 160px;
-  }
-
-  .practice__card {
-    width: 420px;
-    height: 820px;
-  }
-  .practice__card-red{
-    margin-bottom: 30px;
-  }
-  .practice__card-sum {
-
-    font-size: 50px;
-
-}
-.practice__card-descr {
-
-  margin-bottom: 80px;
-}
-.practice__card-acept {
-  gap: 10px;
-}
-.practice__card-acept img{
-  width: 40px;
-  height: 100%;
-}
-}
-
-/* ===== 1200 ===== */
-@media (max-width: 1200px) {
-  .practice__title {
-    margin-bottom: 60px;
-  }
-
-  .practice__descr {
-    font-size:20px;
-    margin-bottom: 50px;
-  }
-
-  .practice__card {
-    width: 380px;
-    height: 760px;
-    padding: 32px 32px 48px;
-  }
-
-  .practice__card-title {
-    font-size: 22px;
-    margin-bottom: 32px;
-  }
-
-  .practice__card-descr {
-    font-size: 22px;
-    margin-bottom: 90px;
-  }
-
-  .practice__card-sum {
-    font-size: 45px;
-  }
-
-  .practice__card-red {
-    font-size: 30px;
-  }
-  .practice__card-button {
-    font-size: 20px;
-    padding: 22px 40px;
-  }
-  
-}
-
-/* ===== 1000 ===== */
-@media (max-width: 1000px) {
-  .main__practice {
-    margin-top: 120px;
-  }
-
-  .practice__title {
-    font-size: 40px;
-  }
-
-  .practice__descr {
-    font-size: 21px;
-  }
-
-  .practice__card {
-    width: 340px;
-    height: 700px;
-  }
-
-  .practice__card-descr {
-    margin-bottom: 70px;
-  }
 
 
 
-  .practice__pagination {
-    margin-top: 70px;
-  }
-}
-
-/* ===== 800 ===== */
-@media (max-width: 800px) {
-  .practice__title {
-    font-size: 34px;
-    margin-bottom: 50px;
-  }
-
-  .practice__descr {
-    font-size: 20px;
-    margin-bottom: 40px;
-  }
-
-  .practice__card {
-    width: 300px;
-    height: 650px;
-    padding: 28px 28px 40px;
-  }
-
-  .practice__card-title {
-    font-size: 20px;
-  }
-
-  .practice__card-descr {
-    font-size: 20px;
-    margin-bottom: 60px;
-  }
-
-  .practice__card-sum {
-    font-size: 42px;
-  }
-
-  .practice__card-red {
-    font-size: 26px;
-    margin-bottom: 40px;
-  }
-
-  .practice__card-buttons {
-    max-width: 100%;
-  }
-}
-
-/* ===== 600 ===== */
-@media (max-width: 600px) {
-  .main__practice {
-    margin-top: 100px;
-  }
-
-  .practice__title {
-    font-size: 30px;
-    margin-bottom: 40px;
-  }
-
-  .practice__descr {
-    font-size: 19px;
-  }
-
-  .practice__card {
-    width: 100%;
-    height: auto;
-    min-height: 600px;
-    padding: 24px;
-  }
-
-  .practice__card-descr {
-    margin-bottom: 40px;
-  }
-
-  .practice__card-acept {
-    gap: 16px;
-  }
-
-  .practice__card-button {
-    font-size: 20px;
-    padding: 20px;
-  }
-
-  .practice__pagination {
-    margin-top: 50px;
-  }
-}
-
-/* ===== 375 ===== */
-@media (max-width: 375px) {
-  .practice__title {
-    font-size: 26px;
-  }
-
-  .practice__descr {
-    font-size: 18px;
-  }
-
-  .practice__card-title {
-    font-size: 18px;
-  }
-
-  .practice__card-descr {
-    font-size: 18px;
-  }
-
-  .practice__card-sum {
-    font-size: 36px;
-  }
-
-  .practice__card-red {
-    font-size: 22px;
-  }
-
-  .practice__card-button {
-    font-size: 18px;
-    padding: 18px;
-  }
-}
 
 /* =================== header__swiper ======================= */
 .sleder__accent--color {
@@ -1232,8 +1018,8 @@ margin-bottom: 55px;
   position: absolute;
   inset: 0;
   background: rgba(212, 212, 212, 0.1);
-  backdrop-filter: blur(17.5px);
-  -webkit-backdrop-filter: blur(17.5px);
+  /* backdrop-filter: blur(17.5px); */
+  /* -webkit-backdrop-filter: blur(17.5px); */
   z-index: -1;
   border-radius: 9px;
 }
@@ -1474,6 +1260,168 @@ margin-bottom: 55px;
   width: 3px;
   background: var(--accent-color);
 }
+/* =================== bid ======================= */
+.bid {
+  padding: 80px 0;
+  height: 1310px;
+}
+.maim__bid {
+  margin-top: 200px;
+}
+.bid__inner {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+}
+.bid__left {
+  display: flex;
+  align-items: start;
+  gap: 140px;
+  justify-content: space-between;
+}
+.bid__social {
+}
+.bid__social-list {
+  gap: 10px;
+}
+.bid__social-item {
+  width: 80px;
+  height: 80px;
+  max-width: none;
+}
+.contact {
+}
+.bid__contact {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  font-size: 24px;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+color: #fff;
+}
+.bid__right {
+  max-width: 705px;
+}
+.bid__info {
+  padding: 40px;
+  background: #fff;
+  border-radius: 13px;
+  margin-bottom: 38px;
+}
+.bid__title {
+  font-size: 48px;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+}
+.bid__subtitle {
+}
+.bid__form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background: #fff;
+  padding: 60px 50px;
+  border-radius: 13px;
+  margin-bottom: 38px;
+}
+.bid__input{
+  font-size: 20px;
+  padding: 30px;
+  width: 100%;
+  border: 2.67px solid var(--accent-color);
+  border-radius: 11px;
+}
+.bid__buttons {
+    display: flex;
+  gap: 25px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 13px;
+}
+.bid__button {
+  font-weight: 600;
+font-size: 24px;
+color: #fff;
+padding: 25px;
+background: var(--accent-color);
+border-radius: 11px;
+}
+
+.bid__checkbox-inner {
+  font-size: 15px;
+  line-height: 1.35;
+  max-width: 283px;
+  /* Дополнительные стили для выравнивания содержимого */
+  display: flex;
+  align-items: flex-start;
+}
+
+.custom-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  position: relative; /* Чтобы позиционировать кастомный квадратик относительно него */
+  padding-left: 44px; /* Отступ для самого текста от кастомного квадратика */
+}
+
+/* Скрываем реальный чекбокс */
+.bid__checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Создаем кастомный квадратик (замена чекбокса) с помощью span */
+.custom-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 34px; /* Размер как на фото */
+  width: 34px; /* Размер как на фото */
+  background-color: #eee; /* Цвет фона неактивного состояния */
+  border: 1px solid #ccc; /* Граница */
+  border-radius: 4px; /* Легкое скругление углов */
+  box-sizing: border-box; /* Учитываем границу в размере */
+}
+
+
+
+/* Стиль при активном состоянии (чекбокс отмечен) */
+.bid__checkbox:checked ~ .custom-checkmark { /* Цвет фона отмеченного квадрата (черный, как на фото) */
+  border-color: var(--accent-color);
+}
+
+/* Создаем галочку внутри квадрата (используя псевдоэлемент after) */
+.custom-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Показываем галочку, когда чекбокс отмечен */
+.bid__checkbox:checked ~ .custom-checkmark:after {
+  display: block;
+}
+
+/* Стиль самой галочки (просто белая галочка в центре) */
+.custom-checkmark:after {
+  left: 12px;
+  top: 6px;
+  width: 8px;
+  height: 16px;
+  border: solid var(--accent-color);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.policy-link {
+  color: inherit; /* Ссылка наследует цвет текста родителя */
+  text-decoration: underline;
+}
+
 
 
 
@@ -1482,7 +1430,12 @@ margin-bottom: 55px;
 
 
 
-@media (max-width: 1400px) {
+/* @media (max-width: 1600px) {
+  .container{
+    padding: 0 150px;
+  }
+} */
+@media (max-width: 1600px) {
   /* ------global------- */
   .container--relative{
     width: 100%;
@@ -1490,6 +1443,9 @@ margin-bottom: 55px;
 
   .header__slide {
     display: flex;
+  }
+  .container{
+    padding: 0px 120px;
   }
   /* ------header------- */
   .header__logo {
@@ -1673,9 +1629,7 @@ margin-bottom: 55px;
 
 
 /* ----- steps ------- */
-.steps__container {
-  max-width: 1200px;
-}
+
 /* ----- values ------- */
 .values__container {
   max-width: 1200px;
@@ -1684,13 +1638,57 @@ margin-bottom: 55px;
 .values__list {
   gap: 48px;
 }
+
+/* ----- practice ------ */
+ .main__practice {
+    margin-top: 160px;
+  }
+
+  .practice__card {
+    width: 420px;
+    height: 820px;
+  }
+  .practice__card-red{
+    margin-bottom: 30px;
+  }
+  .practice__card-sum {
+
+    font-size: 50px;
+
+}
+.practice__card-descr {
+
+  margin-bottom: 80px;
+}
+.practice__card-acept {
+  gap: 10px;
+}
+.practice__card-acept img{
+  width: 40px;
+  height: 100%;
 }
 
-@media (max-width: 1200px) {
+/* ----- bid --------- */
+.bid__inner {
+    gap: 30px;
+}
+.bid__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    justify-content: start;
+}
+}
+
+@media (max-width: 1400px) {
   /* ------global------- */
   .main__about {
     margin-top: 1200px;
 }
+  .container{
+    padding: 0px 100px;
+  }
 
   /* ------header------- */
   .header__logo {
@@ -1704,7 +1702,7 @@ margin-bottom: 55px;
 
   .header__item,
   .header__subitem a {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .location {
@@ -1724,7 +1722,7 @@ margin-bottom: 55px;
   }
 
   .social__item {
-    max-width: 35px;
+    max-width: 45px;
   }
 
   .contact span {
@@ -1953,10 +1951,62 @@ line-height: 100%;
 .reliability-text p{
   font-size: 45px;
 }
+/* ----- practice ------ */
+.practice__title {
+    margin-bottom: 60px;
+  }
+
+  .practice__descr {
+    font-size:20px;
+    margin-bottom: 50px;
+  }
+
+  .practice__card {
+    width: 380px;
+    height: 760px;
+    padding: 32px 32px 48px;
+  }
+
+  .practice__card-title {
+    font-size: 22px;
+    margin-bottom: 32px;
+  }
+
+  .practice__card-descr {
+    font-size: 22px;
+    margin-bottom: 90px;
+  }
+
+  .practice__card-sum {
+    font-size: 45px;
+  }
+
+  .practice__card-red {
+    font-size: 30px;
+  }
+  .practice__card-button {
+    font-size: 20px;
+    padding: 22px 40px;
+  }
+
+  /* ---- bid ------- */
+  .bid__social-item{
+    max-width: 60px;
+  }
+  .bid__left{
+    gap: 20px;
+  }
+
+  .bid__title{
+    font-size: 45px;
+  }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   /* ------global------- */
+  .container{
+    padding: 0px 80px;
+  }
 
   /* ------header------- */
   .contact span:first-child,
@@ -1968,7 +2018,7 @@ line-height: 100%;
   }
   .header__item,
   .header__subitem a {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   /* ----- header_slider ----- */
@@ -2146,15 +2196,79 @@ display: none;
 }
 .reviews__more::after{
  bottom: -15px;
+
+ /* ----- practice ------ */
+  .main__practice {
+    margin-top: 120px;
+  }
+
+  .practice__title {
+    font-size: 40px;
+  }
+
+  .practice__descr {
+    font-size: 21px;
+  }
+
+  .practice__card {
+    width: 340px;
+    height: 700px;
+  }
+
+  .practice__card-descr {
+    margin-bottom: 70px;
+  }
+
+
+
+  .practice__pagination {
+    margin-top: 70px;
+  }
 }
 
+/* ---- bid ------- */
+.bid {
+    padding: 60px 0;
+    height: auto;
+}
+.bid__info, .bid__form, .bid__buttons{
+  padding: 30px;
+}
+.bid__input{
+  padding: 20px;
+}
+.bid__title{
+  font-size: 18px;
+  font-size: 35px;
+}
+.bid__subtitle{
+  font-size: 18px;
+}
 
+.bid__button{
+  font-size: 18px;
+  padding: 15px;
+}
+.custom-checkmark{
+  height: 25px;
+  width: 25px;
+}
+    .custom-checkmark:after {
+    left: 9px;
+     top: 2px; 
+}
+.bid__checkbox-text{
+  font-size: 14px;
+}
 
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   /* ------global------- */
+    .container{
+    padding: 0px 40px;
+  }
 
-  .burger {
+    .burger {
     display: flex;
   }
 
@@ -2168,7 +2282,7 @@ display: none;
 
   /* ------header------- */
 
-  .social__list,
+  .header__social,
   .location__info {
     display: none;
   }
@@ -2181,7 +2295,7 @@ display: none;
     inset: 0;
     bottom: -20px;
     background: rgb(220, 220, 220);
-    backdrop-filter: blur(17.5px);
+    /* backdrop-filter: blur(17.5px); */
     z-index: 11;
   }
   .header__logo {
@@ -2236,8 +2350,8 @@ display: none;
     visibility: hidden;
     transition: height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
     background: rgb(220, 220, 220);
-    -webkit-backdrop-filter: blur(17.5px); /* Для Safari */
-    backdrop-filter: blur(17.5px);
+    /* -webkit-backdrop-filter: blur(17.5px);  */
+    /* backdrop-filter: blur(17.5px); */
   }
 
 
@@ -2486,11 +2600,62 @@ display: none;
   width: 100px;
   height: auto;
 }
+/* ----- practice ------ */
+.practice__title {
+    font-size: 34px;
+    margin-bottom: 50px;
+  }
+
+  .practice__descr {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .practice__card {
+    width: 300px;
+    height: 650px;
+    padding: 28px 28px 40px;
+  }
+
+  .practice__card-title {
+    font-size: 20px;
+  }
+
+  .practice__card-descr {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+
+  .practice__card-sum {
+    font-size: 42px;
+  }
+
+  .practice__card-red {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  .practice__card-buttons {
+    max-width: 100%;
+  }
+
+  /* ----- bid ------- */
+  .bid__inner {
+        flex-direction: column;
+        align-items: center;
+    }
+  .bid__contact{
+    flex-direction: row;
+    gap: 15px;
+  }
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   /* ------global------- */
+    .container{
+    padding: 0px 32px;
+  }
   .container--mobile {
     padding: 0 17px;
   }
@@ -2517,6 +2682,7 @@ display: none;
   margin-top: 100px;
 }
 
+
 .main__reviews{
   margin-top: 100px;
 }
@@ -2526,6 +2692,9 @@ display: none;
 
 .main__reliability-text {
   margin-top: 100px;
+}
+.maim__bid{
+margin-top: 100px;
 }
 
 .pagination .swiper-pagination-bullet {
@@ -2696,8 +2865,8 @@ display: none;
 
 .about__video-player::before{
   transform: scale(0.5);
-  top: 30%;
-  left: 40%;
+  top: 40%;
+  left: 45%;
 }
 
   /* ------- advantages -------- */
@@ -2784,7 +2953,7 @@ display: none;
 }
 
 .team__nums-title{
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .team__nums-descr{
@@ -2937,9 +3106,156 @@ display: none;
 .reviews__more img {
   width: 40px;
 }
+/* ----- practice ------ */
+.main__practice {
+    margin-top: 100px;
+  }
+
+  .practice__title {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .practice__descr {
+    font-size: 19px;
+  }
+
+  .practice__card {
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    padding: 24px;
+  }
+
+  .practice__card-descr {
+    margin-bottom: 40px;
+  }
+
+  .practice__card-acept {
+    gap: 16px;
+  }
+
+  .practice__card-button {
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .practice__pagination {
+    margin-top: 50px;
+  }
+  /* ----- bid ------- */
+  .bid__contact{
+    font-size: 18px;
+  }
+  .bid__title{
+    margin-bottom: 20px;
+  }
+    .bid__title {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  .bid__subtitle{
+    font-size: 15px;
+  }
+  .bid__info, .bid__form, .bid__buttons{
+    margin-bottom: 20px;
+    padding: 20px;
+  }
 }
 
 
+@media (max-width: 600px) {
+      .container {
+        padding: 0px 25px;
+    }
+  /* --------- */
+  .practice__title {
+    font-size: 26px;
+  }
+
+  .practice__descr {
+    font-size: 18px;
+  }
+
+  .practice__card-title {
+    font-size: 18px;
+  }
+
+  .practice__card-descr {
+    font-size: 18px;
+  }
+
+  .practice__card-sum {
+    font-size: 36px;
+  }
+
+  .practice__card-red {
+    font-size: 22px;
+  }
+
+  .practice__card-button {
+    font-size: 18px;
+    padding: 18px;
+  }
+
+  /* --- bid ----- */
+.bid__right{
+  max-width: 547px;
+}
+.bid__social-item {
+        max-width: 45px;
+        max-height: 45px;
+    }
+  
+    .bid__contact{
+      gap: 10px;
+      font-size: 15px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bid__title{
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+    
+
+    .bid__info, .bid__form, .bid__buttons {
+      text-align: center;
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+  .bid__subtitle{
+    font-size: 12px;
+  }
+
+      .bid__input {
+        font-size: 15px;
+        padding: 10px;
+    }
+    .bid__form{
+      gap: 10px;
+    }
+    .bid__buttons{
+      flex-direction: column;
+    }
+    .bid__button{
+      font-size: 15px;
+    }
+    .bid__checkbox-text{
+      font-size: 12px;
+    }
+    .bid__checkbox-inner{
+      align-self: center;
+    }
+
+}
+
+
+@media (max-width: 400px){
+  .bid__right{
+  max-width: 327px;
+}
+}
 
 
 

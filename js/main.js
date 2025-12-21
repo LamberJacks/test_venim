@@ -51,7 +51,7 @@
 
   // Burger menu
   (function () {
-    const MOBILE_WIDTH = 800;
+    const MOBILE_WIDTH = 1000;
     let isMobile = false;
     let scrollY = 0;
   
