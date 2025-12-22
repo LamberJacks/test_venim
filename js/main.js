@@ -1,53 +1,77 @@
 (function () {
   // меню анимация (временно)
-  const headerList = document.querySelector(".header__list");
-  if (!headerList) return;
+const menus = document.querySelectorAll(".header__list, .nav__list");
 
-  headerList.addEventListener("click", function (e) {
-    const item = e.target.closest(".header__item");
+menus.forEach(menu => {
+  menu.addEventListener("click", e => {
+    const item =
+      e.target.closest(".header__item") ||
+      e.target.closest(".nav__item");
 
+    if (!item) return;
+
+    const isHeader = item.classList.contains("header__item");
+    const itemClass = isHeader ? "header__item" : "nav__item";
+    const activeClass = isHeader
+      ? "header__item--active"
+      : "nav__item--active";
+    const hasSubmenuClass = isHeader
+      ? "header__item--has-submenu"
+      : "nav__item--has-submenu";
+    const openClass = isHeader
+      ? "header__item--open"
+      : "nav__item--open";
+
+    /* ---------- ACTIVE ---------- */
     if (
-      item &&
-      !item.classList.contains("header__subitem") &&
-      !item.classList.contains("header__item--has-submenu")
+      !item.classList.contains(hasSubmenuClass) &&
+      !item.closest(".header__submenu")
     ) {
-      const currentActive = headerList.querySelector(".header__item--active");
-      if (currentActive) {
-        currentActive.classList.remove("header__item--active");
-      }
-
-      item.classList.add("header__item--active");
+      const currentActive = menu.querySelector(`.${activeClass}`);
+      if (currentActive) currentActive.classList.remove(activeClass);
+      item.classList.add(activeClass);
     }
-  });
 
-  headerList.addEventListener("click", function (e) {
-    const target = e.target;
-    const item = target.closest(".header__item--has-submenu");
-
-    if (item) {
+    /* ---------- SUBMENU ---------- */
+    if (item.classList.contains(hasSubmenuClass)) {
       e.preventDefault();
 
       const submenu = item.querySelector(".header__submenu");
-      const isOpen = item.classList.contains("header__item--open");
+      const isOpen = item.classList.contains(openClass);
+
+      // закрываем остальные
+      menu
+        .querySelectorAll(`.${openClass}`)
+        .forEach(openItem => {
+          if (openItem !== item) {
+            closeSubmenu(
+              openItem,
+              openItem.querySelector(".header__submenu"),
+              openClass
+            );
+          }
+        });
 
       if (isOpen) {
-        closeSubmenu(item);
+        closeSubmenu(item, submenu, openClass);
       } else {
-        openSubmenu(item, submenu);
+        openSubmenu(item, submenu, openClass);
       }
     }
   });
+});
 
-  function openSubmenu(item, submenu) {
-    item.classList.add("header__item--open");
-    submenu.style.height = submenu.scrollHeight + "px";
-  }
+/* ---------- HELPERS ---------- */
+function openSubmenu(item, submenu, openClass) {
+  item.classList.add(openClass);
+  submenu.style.height = submenu.scrollHeight + "px";
+}
 
-  function closeSubmenu(item) {
-    const submenu = item.querySelector(".header__submenu");
-    item.classList.remove("header__item--open");
-    submenu.style.height = "0px";
-  }
+function closeSubmenu(item, submenu, openClass) {
+  item.classList.remove(openClass);
+  submenu.style.height = "0px";
+}
+
 
   // Burger menu
   (function () {
@@ -343,6 +367,7 @@ showTeamMember(0);
     slidesPerView: 'auto',
     freeMode: true, 
     watchSlidesProgress: true,
+    loop: false
   
   });
   

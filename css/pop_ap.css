@@ -53,7 +53,7 @@
   grid-template-columns: 1fr;
   width: 100%;
   max-width: 822px;
-  height: 90vh;
+  height: 70vh;
   padding: 64px;
   background: #fff;
   border: 5px solid var(--accent-color);
@@ -143,6 +143,10 @@
 }
 
 /* ===== DOC ===== */
+.popup__doc{
+  height: fit-content;
+  align-self: center;
+}
 
 .popup__doc img {
   width: 100%;
@@ -177,8 +181,8 @@
   .popup__close{
     width: 30px;
     height: 30px;
-    top: 60px;
-    right: 60px;
+    top: 30px;
+    right: 30px;
   }
   
 }
@@ -211,8 +215,8 @@
   .popup__close {
     width: 25px;
     height: 25px;
-    top: 55px;
-    right: 55px;
+    top: 25px;
+    right: 25px;
   }
 }
 
@@ -254,8 +258,6 @@
 .popup__close {
   width: 15px;
   height: 15px;
-  top: 45px;
-  right: 45px;
 }
 }
 
