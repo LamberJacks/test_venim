@@ -162,6 +162,32 @@
 .popup__amount{
   flex-direction: column;
 }
+.popup__title {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.popup__text {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1;
+}
+.popup__amount-value {
+    font-size: 40px;
+}
+.popup__amount-text {
+    font-size: 30px;
+}
+.popup__success img{
+  width: 50px;
+}
+.popup__success {
+    font-size: 18px;
+    margin-top: 15px;
+}
+.popup__body {
+    padding: 40px;
+
 }
 @media (max-width: 1400px) {
   .popup__body,
