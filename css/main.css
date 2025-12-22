@@ -60,7 +60,7 @@ body {
   color: var(--accent-color);
 }
 
-.main__about{
+.main{
   margin-top: 1000px ;
 }
 
@@ -2143,7 +2143,7 @@ margin-bottom: 60px;
 
 @media (max-width: 1400px) {
   /* ------global------- */
-  .main__about {
+  .main {
     margin-top: 1200px;
 }
   .container{
@@ -2856,7 +2856,7 @@ padding: 25px 50px;
 @media (max-width: 1000px) {
   /* ------global------- */
     .container{
-    padding: 0px 40px;
+    padding: 0px 60px;
   }
 
     .burger {
@@ -2867,7 +2867,7 @@ padding: 25px 50px;
     margin-top: 150px;
 }
 
-.main__about{
+.main{
   margin-top: 1300px;
 }
 
@@ -3290,7 +3290,7 @@ padding: 25px 50px;
 @media (max-width: 800px) {
   /* ------global------- */
     .container{
-    padding: 0px 32px;
+    padding: 0px 40px;
   }
   .container--mobile {
     padding: 0 17px;
@@ -3300,7 +3300,7 @@ padding: 25px 50px;
     height: 27px;
   }
   
-  .main__about{
+  .main{
     margin-top: 1150px;
   }
 
@@ -3387,7 +3387,7 @@ margin-top: 100px;
     gap: 15px;
   }
   .contact span {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .nav.open {
@@ -4046,6 +4046,11 @@ margin-top: 100px;
 }
         .footer__grid {
         grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .footer__info, .footer__contact{
+      align-items: center;
+      text-align: center;
     }
     .about__video-player::before {
         transform: scale(0.5);
@@ -4054,5 +4059,51 @@ margin-top: 100px;
     }
 }
 
+
+/* ======== services ========== */
+.services__button-inner{
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+}
+.services__button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 110px;
+  background: var(--accent-color);
+  border-radius: 11px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+@media (max-width:1600px){
+  .services__button {
+    padding: 30px 90px;
+    font-size: 20px;
+}
+}
+@media (max-width:1000px){
+.services__button {
+        padding: 30px 70px;
+    }
+}
+@media (max-width:800px){
+    .services__button {
+        padding: 20px 50px;
+        font-size: 15px;
+    }
+    .services__button-inner{
+      margin-top: 50px;
+    }
+}
+@media (max-width:600px){
+.services__button {
+        padding: 15px 25px;
+        font-size: 12px;
+        border-radius: 7px;
+    }
+}
 
 

@@ -34,7 +34,7 @@ menus.forEach(menu => {
 
     /* ---------- SUBMENU ---------- */
     if (item.classList.contains(hasSubmenuClass)) {
-      e.preventDefault();
+
 
       const submenu = item.querySelector(".header__submenu");
       const isOpen = item.classList.contains(openClass);
