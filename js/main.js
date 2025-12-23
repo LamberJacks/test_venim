@@ -327,8 +327,10 @@ showTeamMember(0);
 
   // Таб
   const tabControls = document.querySelector(".tab-controls")
+  
+  
 
-  tabControls.addEventListener("click", toggleTab)
+if(tabControls){tabControls.addEventListener("click", toggleTab)}
 
   function toggleTab(e) {
     const target = e.target
