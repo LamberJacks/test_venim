@@ -3158,6 +3158,11 @@ padding: 25px 50px;
   background: #dcdede;
 }
 
+.reviews__text, .reviews__subtitle h6 {
+  font-size: 14px;
+}
+
+
 .reviews__card{
   padding: 40px 35px;
 }
@@ -3202,6 +3207,9 @@ padding: 25px 50px;
     margin-bottom: 40px;
   }
 
+  .practice__card-acept span {
+    font-size: 18px;
+  }
   .practice__card {
     width: 300px;
     height: 650px;
@@ -3780,6 +3788,9 @@ margin-top: 100px;
     font-size: 30px;
     margin-bottom: 40px;
   }
+    .practice__card-acept span {
+    font-size: 15px;
+  }
 
   .practice__descr {
     font-size: 19px;
@@ -3793,6 +3804,7 @@ margin-top: 100px;
   }
 
   .practice__card-descr {
+    font-size: 15px;
     margin-bottom: 40px;
   }
 
@@ -3801,9 +3813,12 @@ margin-top: 100px;
   }
 
   .practice__card-button {
-    font-size: 20px;
-    padding: 20px;
+    font-size: 18px;
+    padding: 15px;
   }
+  .practice__card-sum {
+        font-size: 35px;
+    }
 
   .practice__pagination {
     margin-top: 50px;
@@ -3904,20 +3919,24 @@ margin-top: 100px;
   }
 
   .practice__card-descr {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .practice__card-sum {
-    font-size: 36px;
+    font-size: 30px;
   }
+      .practice__card-sub_sum {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
 
   .practice__card-red {
     font-size: 22px;
   }
 
   .practice__card-button {
-    font-size: 18px;
-    padding: 18px;
+    font-size: 14px;
+    padding: 15px;
   }
 
 
