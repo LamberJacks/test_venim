@@ -522,14 +522,31 @@ const partnersSwiper = new Swiper('.partners__swiper', {
   pagination: {
     el: '.partners__pagination',
   },
-//   breakpoints: {
-//   1000: {
-//     slidesPerView: 2,
-//   },
-//   800: {
-//     slidesPerView: 1.5,
-//   }
-// }
+
+});
+
+const categoriesSwiper = new Swiper('.categories__swiper', {
+  spaceBetween: 30,
+  slidesPerView: 1,
+  
+  pagination: {
+    el: '.categories__pagination',
+  } 
+});
+
+const paginationSwiper = new Swiper('.present__swiper', {
+  spaceBetween: 30,
+  slidesPerView: 1,
+  
+  pagination: {
+    el: '.present__pagination',
+  }, 
+
+  breakpoints: {
+    600: {
+      slidesPerView: 2
+    }
+  }
 });
 
 

@@ -672,12 +672,28 @@ margin-bottom: 130px;
   margin-top: 200px;
 }
 
-.steps__container {
+/* .steps__container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
+} */
+
+.steps__item{
+  position: relative;
+}
+.steps__item::before{
+  content: "";
+  position: absolute;
+  top: 30%;
+    left: 100%;
+    width: 32%;
+  height: 5px;
+  background-color: var(--accent-color);
 }
 
+.steps__item:last-child::before{
+  display: none;
+}
 .steps__title {
   margin-bottom: 80px;
   font-size: 48px;
@@ -1921,7 +1937,9 @@ margin-bottom: 60px;
 
 
 /* ----- steps ------- */
-
+.steps__item::before{
+  display: none;
+}
 /* ----- values ------- */
 .values__container {
   max-width: 1200px;
@@ -3713,9 +3731,9 @@ margin-top: 100px;
 .steps {
   padding: 40px 0;
 }
-.steps__container {
+/* .steps__container {
   padding: 0 20px;
-}
+} */
 
 .steps__title {
   font-size: 34px;
