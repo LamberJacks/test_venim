@@ -1,0 +1,253 @@
+.main{
+  margin-top: 100px;
+}
+.main__experience{
+  margin-bottom: 100px;
+}
+.experience .accent--color{
+  font-weight: 700;
+}
+.experience__title{
+  color: var(--accent-color);
+  margin-bottom: 85px;
+}
+.experience__descr{
+  margin-bottom: 80px;
+}
+.experience__nav{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 140px;
+  gap: 20px;
+}
+
+.experience__list{
+  position: relative;
+  line-height: 1.19;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-left: 40px;
+  height: fit-content;
+}
+.experience__list::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: -40px;
+  height: 100%;
+  width: 4px;
+  background: var(--accent-color);
+}
+
+.experience__accordion-title{
+  display: block;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 95px;
+}
+
+.experience__accordion .accordion__item{
+  transition: background .5s;
+}
+.experience__accordion .accordion__item--active{
+  background: transparent;
+}
+
+.experience__accordion .practice__pagination{
+  margin-top: 40px;
+}
+.experience .tab-controls__link {
+  text-align: center;
+}
+
+
+
+@media (max-width: 1600px){
+  .experience__title{
+    font-size: 48px;
+    margin-bottom: 60px;
+  }
+
+  .experience__descr{
+    margin-bottom: 60px;
+  }
+  .experience__list{
+    margin-left: 20px;
+    gap: 20px;
+  }
+  .experience__list::before{
+    left: -20px;
+  }
+  
+}
+
+@media (max-width: 1400px){
+.experience__list{
+  font-size: 18px;
+}
+
+.experience .tab-controls__link{
+  font-size: 18px;
+}
+
+.experience__accordion .practice__card-button {
+    font-size: 18px;
+    padding: 15px 20px;
+}
+
+.experience .practice__card-title {
+    font-size: 20px;
+}
+
+.experience .practice__card-descr, .experience .practice__card-acept span {
+  font-size: 18px;
+}
+.experience  .practice__card-sum {
+  font-size: 35px;
+}
+
+.experience .practice__card {
+
+        height: auto;
+
+    }
+
+ .experience .practice__card-acept{
+  margin-bottom: 20px;
+ }
+
+ .experience .practice__card{
+  min-height: auto;
+ }
+
+}
+
+
+@media (max-width: 1200px){
+      .experience .tab-controls__link{
+        padding: 25px;
+      }
+}
+@media (max-width: 1000px){
+  .experience__list{
+  font-size: 18px;
+}
+
+.experience .tab-controls__link{
+  font-size: 18px;
+}
+
+.experience__accordion .practice__card-button {
+    font-size: 15px;
+    padding: 15px 20px;
+}
+
+.experience .practice__card-title {
+    font-size: 18px;
+}
+
+.experience .practice__card-descr, .experience .practice__card-acept span {
+  font-size: 15px;
+}
+
+.experience__accordion-title{
+  margin-bottom: 70px;
+}
+
+.experience__nav{
+  margin-bottom: 90px;
+}
+.experience .tab-controls__link {
+  font-size: 15px;
+          padding: 20px;
+}
+
+    .experience__descr{
+      font-size: 18px;
+    }
+
+
+    .breadcrumbs{
+font-size: 18px;
+}
+
+}
+
+@media (max-width: 800px){
+  .experience .tab-controls{
+    margin-bottom: 55px;
+  }
+
+      .experience__list {
+        font-size: 15px;
+    }
+
+    .experience__title {
+        font-size: 42px;
+        margin-bottom: 45px;
+    }
+    .experience__descr {
+        margin-bottom: 45px;
+    }
+    .main__experience {
+    margin-bottom: 30px;
+}
+    .breadcrumbs{
+font-size: 15px;
+}
+.breadcrumbs{
+
+  margin-bottom: 70px;
+
+}
+}
+@media (max-width: 600px){
+  .experience__descr {
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+        .experience__title {
+        font-size: 35px;
+        margin-bottom: 35px;
+    }
+        .experience .tab-controls {
+          flex-direction: column;
+        }
+        .experience .tab-controls__link {
+        font-size: 12px;
+        padding: 15px;
+    }
+        .breadcrumbs{
+font-size: 12px;
+}
+
+    .experience__nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 100px;
+    gap: 20px;
+}
+
+.experience__list::before {
+
+    left: -20px;
+
+    width: 2px;
+
+}
+    .experience__list {
+        margin-left: 20px;
+        gap: 10px
+        ;
+    }
+    .main {
+    margin-top: 80px;
+}
+.breadcrumbs{
+
+  margin-bottom: 50px;
+  
+}
+}
