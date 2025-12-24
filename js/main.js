@@ -329,8 +329,8 @@ showTeamMember(0);
   const tabControls = document.querySelector(".tab-controls")
   
   
-
-if(tabControls){tabControls.addEventListener("click", toggleTab)}
+if (tabControls){
+  tabControls.addEventListener("click", toggleTab)
 
   function toggleTab(e) {
     const target = e.target
@@ -351,7 +351,7 @@ if(tabControls){tabControls.addEventListener("click", toggleTab)}
 
     tabContent.classList.add("tab-content--show")
     tabControl.classList.add('tab-controls--active')
-  }
+  }}
   //------------------------------------------------------
 
   
@@ -377,7 +377,7 @@ if(tabControls){tabControls.addEventListener("click", toggleTab)}
 
   const track = document.querySelector('.marquee__track');
   const line = document.querySelector('.marquee__line');
-  const speed = 0.5; // px per frame
+  if(line){const speed = 0.5; // px per frame
   
   let position = 0;
   const lineWidth = line.offsetWidth;
@@ -393,7 +393,7 @@ if(tabControls){tabControls.addEventListener("click", toggleTab)}
     requestAnimationFrame(animate);
   }
   
-  animate();
+  animate();}
 
 
 // reviews slider

@@ -139,6 +139,17 @@ line-height: 1;
 }
 
 
+.breadcrumbs{
+  display: block;
+  margin-bottom: 80px;
+  font-weight: 300;
+}
+.breadcrumbs span{
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
 /* =================== about ======================= */
 
 .about__inner{
@@ -515,13 +526,19 @@ margin-bottom: 130px;
   color: #fff;
 }
 
-.tab-content {
+.tab-content{
+  display: none;
+}
+.services__tab-content {
   display: none;
   gap: 32px;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
 }
 .tab-content--show {
+  display: block;
+}
+.services__tab-content.tab-content--show {
   display: grid;
 }
 .tab-content__card {
