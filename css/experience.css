@@ -21,6 +21,10 @@
   gap: 20px;
 }
 
+#tab2 .experience__nav{
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .experience__list{
   position: relative;
   line-height: 1.19;
