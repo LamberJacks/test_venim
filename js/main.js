@@ -409,7 +409,10 @@ const reviewsSwiper = new Swiper('.reviews__swiper', {
     slidesPerView: 2,
   },
   800: {
-    slidesPerView: 1.5,
+    slidesPerView: 1.7,
+  },
+  600: {
+    slidesPerView:1.5
   }
 }
 });
@@ -481,32 +484,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Аккардион 
-// Находим все кнопки аккордеона
-const buttons = document.querySelectorAll('.accordion__control');
+// Находим ВСЕ аккордеоны
+const accordions = document.querySelectorAll('.accordion');
 
-// Для каждой кнопки добавляем обработчик клика
-const accordion = document.querySelector('.accordion');
-const items = accordion.querySelectorAll('.accordion__item');
-
-items.forEach(item => {
-  const control = item.querySelector('.accordion__control');
-  const inner = item.querySelector('.accordion__inner');
-
-  control.addEventListener('click', () => {
-    const isOpen = item.classList.contains('accordion__item--active');
-
-    // закрываем все
-    items.forEach(el => {
-      el.classList.remove('accordion__item--active');
-      el.querySelector('.accordion__inner').style.maxHeight = null;
+accordions.forEach(accordion => {
+  const items = accordion.querySelectorAll('.accordion__item');
+  
+  items.forEach(item => {
+    const control = item.querySelector('.accordion__control');
+    const inner = item.querySelector('.accordion__inner');
+    
+    control.addEventListener('click', () => {
+      const isOpen = item.classList.contains('accordion__item--active');
+      
+      // Закрываем все элементы ТОЛЬКО в текущем аккордеоне
+      items.forEach(el => {
+        el.classList.remove('accordion__item--active');
+        el.querySelector('.accordion__inner').style.maxHeight = null;
+      });
+      
+      // Если был закрыт — открываем
+      if (!isOpen) {
+        item.classList.add('accordion__item--active');
+        inner.style.maxHeight = inner.scrollHeight + 'px';
+      }
     });
-
-    // если был закрыт — открываем
-    if (!isOpen) {
-      item.classList.add('accordion__item--active');
-      inner.style.maxHeight = inner.scrollHeight + 'px';
-    }
   });
 });
 
@@ -520,14 +522,31 @@ const partnersSwiper = new Swiper('.partners__swiper', {
   pagination: {
     el: '.partners__pagination',
   },
-//   breakpoints: {
-//   1000: {
-//     slidesPerView: 2,
-//   },
-//   800: {
-//     slidesPerView: 1.5,
-//   }
-// }
+
+});
+
+const categoriesSwiper = new Swiper('.categories__swiper', {
+  spaceBetween: 30,
+  slidesPerView: 1,
+  
+  pagination: {
+    el: '.categories__pagination',
+  } 
+});
+
+const paginationSwiper = new Swiper('.present__swiper', {
+  spaceBetween: 30,
+  slidesPerView: 1,
+  
+  pagination: {
+    el: '.present__pagination',
+  }, 
+
+  breakpoints: {
+    600: {
+      slidesPerView: 2
+    }
+  }
 });
 
 

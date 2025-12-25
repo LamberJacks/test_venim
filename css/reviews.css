@@ -1,0 +1,18 @@
+.main__reviews{
+  background: transparent;
+  margin-top: 80px;
+  padding: 0px;
+  margin-bottom: 100px;
+}
+
+
+
+@media (max-width: 1200px) {
+    .reviews__text, .reviews__subtitle h6 {
+        font-size: 15px;
+    }
+        .reviews__name span, .reviews__date, .reviews__link {
+        font-size: 18px;
+    }
+}
+
