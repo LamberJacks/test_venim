@@ -3180,6 +3180,7 @@ padding: 25px 50px;
 }
 
 .steps__button {
+  font-size: 18px;
   padding: 24px 64px;
 }
 .steps__circle {
@@ -3741,7 +3742,12 @@ margin-top: 100px;
 
 .steps__list {
   grid-template-columns: 1fr;
+  justify-items: center;
 }
+
+.steps__item {
+        max-width: 600px;
+    }
 
 .steps__circle {
   width: 150px;
@@ -3752,7 +3758,12 @@ margin-top: 100px;
   font-size: 80px;
 }
 
+.steps__text {
+  font-size: 15px;
+}
+
 .steps__button {
+  font-size: 15px;
   width: 100%;
   padding: 22px 24px;
 }
